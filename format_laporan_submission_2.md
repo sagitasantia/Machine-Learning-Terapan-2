@@ -45,25 +45,25 @@ Sumber data yang digunakan dalam proyek ini berasal dari Kaggle Book Recommendat
 
 Books.csv: Memuat 271.360 entri data buku, mencakup:
 
-ISBN (kode unik buku)
+- ISBN (kode unik buku)
 
-Book-Title (judul buku)
+- Book-Title (judul buku)
 
-Book-Author (penulis)
+- Book-Author (penulis)
 
-Year-Of-Publication (tahun terbit)
+- Year-Of-Publication (tahun terbit)
 
-Publisher (penerbit)
+- Publisher (penerbit)
 
-Tautan gambar sampul buku berukuran kecil hingga besar
+- Tautan gambar sampul buku berukuran kecil hingga besar
 
 Ratings.csv: Terdiri dari 1.149.780 entri penilaian oleh pengguna, mencakup:
 
-User-ID (identitas pengguna)
+- User-ID (identitas pengguna)
 
-ISBN (kode buku yang dinilai)
+- ISBN (kode buku yang dinilai)
 
-Book-Rating (nilai penilaian dari 0 hingga 10)
+- Book-Rating (nilai penilaian dari 0 hingga 10)
 
 Berdasarkan hasil eksplorasi awal, tipe data dari kolom Book-Rating dan User-ID adalah numerik, sementara kolom ISBN bersifat objek/string. Pada berkas Books.csv, seluruh kolom bertipe objek, termasuk Year-Of-Publication, sehingga perlu konversi tipe data ke numerik saat tahap praproses.
 
