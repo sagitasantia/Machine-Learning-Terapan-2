@@ -71,6 +71,26 @@ Distribusi rating menunjukkan banyak pengguna memberikan nilai nol, yang mungkin
 
 ## EDA 
 
+### EDA Univariate
+
+![download](https://github.com/user-attachments/assets/5fbf081a-13a9-4ff1-a15a-5a9e62af2f0c)
+
+![download](https://github.com/user-attachments/assets/68e26465-1cc5-4134-9fbe-ee4ceca6ecb0)
+
+![download](https://github.com/user-attachments/assets/0c958499-f330-4779-a95e-d5e70b341918)
+
+![download](https://github.com/user-attachments/assets/a5a427de-10d5-4b15-8acf-700fc7bc39df)
+
+### EDA Multivariate
+
+![download](https://github.com/user-attachments/assets/695a7cc9-f00f-4771-bcfe-673e095c7fc5)
+
+![download](https://github.com/user-attachments/assets/e64ba59b-fc62-4ac2-9853-42d5b18c958c)
+
+### Matriks Korelasi
+
+![download](https://github.com/user-attachments/assets/5787c921-478a-4986-acdf-c7a699b56d2d)
+
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
