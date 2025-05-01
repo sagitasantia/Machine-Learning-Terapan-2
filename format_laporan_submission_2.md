@@ -43,25 +43,34 @@ Pada proyek ini, pendekatan content-based digunakan untuk memberikan rekomendasi
 ## Data Understanding
 Sumber data yang digunakan dalam proyek ini berasal dari Kaggle Book Recommendation Dataset, yang berisi informasi mengenai buku, pengguna, dan penilaian (rating) yang diberikan.(https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset).
 
-Dataset yang digunakan dalam proyek ini terdiri dari:
+Books.csv: Memuat 271.360 entri data buku, mencakup:
 
-- Books.csv: Berisi informasi buku (271.360 data)
+ISBN (kode unik buku)
 
-- Ratings.csv: Berisi penilaian dari pengguna (1.149.780 data)
+Book-Title (judul buku)
 
-Beberapa fitur penting:
+Book-Author (penulis)
 
-- ISBN: Kode unik buku
+Year-Of-Publication (tahun terbit)
 
-- title: Judul buku
+Publisher (penerbit)
 
-- author: Nama penulis
+Tautan gambar sampul buku berukuran kecil hingga besar
 
-- year: Tahun terbit
+Ratings.csv: Terdiri dari 1.149.780 entri penilaian oleh pengguna, mencakup:
 
-- rating: Nilai penilaian dari pengguna (0–10)
+User-ID (identitas pengguna)
 
-Analisis awal menunjukkan bahwa banyak penilaian yang bernilai nol. Hal ini bisa berarti bahwa pengguna tidak menyukai atau tidak memberikan penilaian eksplisit. Distribusi tahun penerbitan didominasi oleh buku yang terbit antara tahun 1960–2021..
+ISBN (kode buku yang dinilai)
+
+Book-Rating (nilai penilaian dari 0 hingga 10)
+
+Berdasarkan hasil eksplorasi awal, tipe data dari kolom Book-Rating dan User-ID adalah numerik, sementara kolom ISBN bersifat objek/string. Pada berkas Books.csv, seluruh kolom bertipe objek, termasuk Year-Of-Publication, sehingga perlu konversi tipe data ke numerik saat tahap praproses.
+
+Distribusi rating menunjukkan banyak pengguna memberikan nilai nol, yang mungkin menandakan tidak memberikan rating eksplisit. Selain itu, beberapa kolom seperti nama penulis dan penerbit memiliki data null yang perlu ditangani. Distribusi tahun terbit menunjukkan rentang tahun yang luas, namun fokus analisis dibatasi pada buku-buku terbitan 1960 hingga 2021 untuk menjaga relevansi data.bahwa pengguna tidak menyukai atau tidak memberikan penilaian eksplisit. Distribusi tahun penerbitan didominasi oleh buku yang terbit antara tahun 1960–2021.
+
+## EDA 
+
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
