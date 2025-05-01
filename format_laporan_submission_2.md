@@ -2,13 +2,13 @@
 
 ## Project Overview
 
-    Seiring berkembangnya kebutuhan pengguna dalam memilih bahan bacaan yang sesuai, sistem rekomendasi menjadi salah satu solusi penting untuk membantu menemukan buku yang relevan dengan preferensi masing-masing individu. Banyaknya pilihan yang tersedia dapat menimbulkan kebingungan, sehingga diperlukan sistem cerdas yang dapat memberikan saran buku secara otomatis.
+   Seiring berkembangnya kebutuhan pengguna dalam memilih bahan bacaan yang sesuai, sistem rekomendasi menjadi salah satu solusi penting untuk membantu menemukan buku yang relevan dengan preferensi masing-masing individu. Banyaknya pilihan yang tersedia dapat menimbulkan kebingungan, sehingga diperlukan sistem cerdas yang dapat memberikan saran buku secara otomatis.
     Proyek ini bertujuan untuk membangun sistem rekomendasi buku dengan pendekatan machine learning menggunakan dua metode utama, yaitu content-based filtering dan collaborative filtering. Content-based filtering memberikan rekomendasi berdasarkan kemiripan konten buku, seperti nama penulis atau genre, sedangkan collaborative filtering memberikan rekomendasi berdasarkan pola perilaku pengguna lain yang memiliki preferensi serupa.
     Penelitian oleh Hendrayana dan Wibowo (2024) menunjukkan bahwa metode content-based filtering efektif dalam memberikan hasil rekomendasi buku berdasarkan kesamaan kata kunci dan kategori buku. Mereka berhasil memperoleh nilai kemiripan tertinggi sebesar 0,775 untuk buku "Panduan Lengkap Agama Islam Secara Kafah" berdasarkan kata kunci "Panduan Agama Islam". Pendekatan serupa juga telah diterapkan oleh BISA AI Academy dalam proyek sistem rekomendasi buku dengan memanfaatkan algoritma content-based dan collaborative filtering, yang terbukti mampu memberikan rekomendasi yang tepat sasaran bagi pengguna.
 
 ## Business Understanding
 
-    Setiap pembaca tentu memiliki preferensi dan minat yang berbeda dalam memilih buku. Ada yang menyukai karya dari penulis tertentu, ada pula yang lebih tertarik pada genre atau bahkan sampul buku. Perbedaan preferensi ini menjadi alasan kuat untuk menghadirkan sistem rekomendasi buku yang mampu menyesuaikan saran dengan kebiasaan dan minat pembaca. Dengan bantuan sistem rekomendasi, pengguna dapat lebih mudah menemukan bacaan yang relevan dan sesuai dengan selera mereka.
+   Setiap pembaca tentu memiliki preferensi dan minat yang berbeda dalam memilih buku. Ada yang menyukai karya dari penulis tertentu, ada pula yang lebih tertarik pada genre atau bahkan sampul buku. Perbedaan preferensi ini menjadi alasan kuat untuk menghadirkan sistem rekomendasi buku yang mampu menyesuaikan saran dengan kebiasaan dan minat pembaca. Dengan bantuan sistem rekomendasi, pengguna dapat lebih mudah menemukan bacaan yang relevan dan sesuai dengan selera mereka.
 
 ### Problem Statements
 
