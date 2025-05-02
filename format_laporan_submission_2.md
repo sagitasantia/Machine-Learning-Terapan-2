@@ -81,6 +81,12 @@ Grafik ini menunjukkan jumlah rating yang diberikan per tahun publikasi buku. Se
 
 ![download](https://github.com/user-attachments/assets/a5a427de-10d5-4b15-8acf-700fc7bc39df)
 
+Grafik ini menunjukkan rata-rata rating yang diberikan untuk buku berdasarkan tahun penerbitannya. Dapat dilihat bahwa rata-rata rating untuk buku yang diterbitkan antara tahun 1960 hingga 2000-an cukup stabil, dengan angka sekitar 3. Hal ini menandakan bahwa tingkat kepuasan pembaca terhadap buku yang diterbitkan pada periode tersebut relatif seragam.
+
+Namun, setelah tahun 2010, terdapat lonjakan besar pada rata-rata rating, dengan angka yang jauh lebih tinggi dibandingkan tahun-tahun sebelumnya. Hal ini mungkin menunjukkan bahwa buku-buku yang lebih baru mendapatkan sambutan lebih positif dari pembaca, atau ada perubahan dalam cara pembaca memberikan rating, seperti lebih banyak buku dari penulis populer atau peningkatan interaksi pembaca melalui platform digital.
+
+Secara keseluruhan, grafik ini menunjukkan bahwa buku yang lebih baru cenderung mendapatkan rating yang lebih tinggi, sementara buku yang lebih lama memiliki rating yang lebih konsisten dan lebih rendah.
+
 ### EDA Multivariate
 
 ![download](https://github.com/user-attachments/assets/695a7cc9-f00f-4771-bcfe-673e095c7fc5)
