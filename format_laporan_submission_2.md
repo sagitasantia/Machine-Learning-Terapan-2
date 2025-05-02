@@ -108,6 +108,11 @@ Dari grafik, terlihat bahwa sebagian besar buku dengan **rating tinggi** (di ata
 
 ![download](https://github.com/user-attachments/assets/5787c921-478a-4986-acdf-c7a699b56d2d)
 
+Grafik ini menunjukkan **matriks korelasi** antara dua variabel, yaitu **rating** dan **tahun** publikasi buku. Matriks ini menggambarkan hubungan statistik antara kedua variabel tersebut.
+
+Dari matriks tersebut, terlihat bahwa **korelasi antara rating dan tahun publikasi sangat rendah**, dengan nilai **0.04**. Artinya, tidak ada hubungan yang kuat antara **tahun buku diterbitkan** dan **rating** yang diterima buku tersebut. Ini menunjukkan bahwa meskipun ada buku yang lebih baru, **rating** buku tidak tergantung secara signifikan pada tahun penerbitannya.
+
+Korelasi yang rendah ini menunjukkan bahwa **rating buku** tidak terpengaruh secara langsung oleh **tahun publikasi**. Mungkin ada faktor lain yang lebih mempengaruhi rating buku, seperti **genre**, **penulis**, atau **popularitas** buku tersebut.
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
