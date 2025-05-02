@@ -79,10 +79,6 @@ Gambar pertama menunjukkan distribusi rating buku. Terlihat ada banyak rating 0,
 
 Grafik ini menunjukkan jumlah buku yang diterbitkan setiap tahun. Terlihat bahwa penerbitan buku mulai meningkat pesat setelah tahun 1980, dengan lonjakan terbesar di sekitar tahun 2000-an. Ini menandakan adanya perubahan besar dalam industri penerbitan, mungkin terkait dengan kemajuan teknologi percetakan dan digitalisasi. Setelah 2010, jumlah penerbitan mulai stagnan atau menurun sedikit, yang bisa disebabkan oleh tren baru seperti e-book dan self-publishing.
 
-![download](https://github.com/user-attachments/assets/0c958499-f330-4779-a95e-d5e70b341918)
-
-Grafik ini menunjukkan jumlah rating yang diberikan per tahun publikasi buku. Setiap batang mewakili jumlah total rating untuk buku-buku yang diterbitkan pada tahun tertentu, dengan warna yang mewakili kategori rating (misalnya, rating 0 hingga rating 10).
-
 ![download](https://github.com/user-attachments/assets/a5a427de-10d5-4b15-8acf-700fc7bc39df)
 
 Grafik ini menunjukkan rata-rata rating yang diberikan untuk buku berdasarkan tahun penerbitannya. Dapat dilihat bahwa rata-rata rating untuk buku yang diterbitkan antara tahun 1960 hingga 2000-an cukup stabil, dengan angka sekitar 3. Hal ini menandakan bahwa tingkat kepuasan pembaca terhadap buku yang diterbitkan pada periode tersebut relatif seragam.
@@ -91,11 +87,17 @@ Namun, setelah tahun 2010, terdapat lonjakan besar pada rata-rata rating, dengan
 
 Secara keseluruhan, grafik ini menunjukkan bahwa buku yang lebih baru cenderung mendapatkan rating yang lebih tinggi, sementara buku yang lebih lama memiliki rating yang lebih konsisten dan lebih rendah.
 
+![download](https://github.com/user-attachments/assets/04f00bad-5b29-4c36-85c4-60c110063a05)
+
 ### EDA Multivariate
+
+![download](https://github.com/user-attachments/assets/0c958499-f330-4779-a95e-d5e70b341918)
+
+Grafik ini menunjukkan jumlah rating yang diberikan per tahun publikasi buku. Setiap batang mewakili jumlah total rating untuk buku-buku yang diterbitkan pada tahun tertentu, dengan warna yang mewakili kategori rating (misalnya, rating 0 hingga rating 10).
 
 ![download](https://github.com/user-attachments/assets/695a7cc9-f00f-4771-bcfe-673e095c7fc5)
 
-![download](https://github.com/user-attachments/assets/04f00bad-5b29-4c36-85c4-60c110063a05)
+
 
 
 ### Matriks Korelasi
