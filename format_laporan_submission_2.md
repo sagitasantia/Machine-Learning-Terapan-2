@@ -115,7 +115,22 @@ Dari matriks tersebut, terlihat bahwa **korelasi antara rating dan tahun publika
 Korelasi yang rendah ini menunjukkan bahwa **rating buku** tidak terpengaruh secara langsung oleh **tahun publikasi**. Mungkin ada faktor lain yang lebih mempengaruhi rating buku, seperti **genre**, **penulis**, atau **popularitas** buku tersebut.
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+
+Dikarenakan jumlah data yang sangat besar, dilakukan pengambilan sampel agar proses pelatihan model menjadi lebih efisien. Dari dataset Books.csv, diambil sebanyak 25.000 baris data, sedangkan dari Ratings.csv, diambil 5.000 baris data.
+
+![image](https://github.com/user-attachments/assets/3c8078de-92e7-43c3-ba47-39a213f44a7d)
+
+Menghapus data duplikat dan nilai kosong pada kolom-kolom penting seperti author dan Publisher
+![image](https://github.com/user-attachments/assets/f1dda7fa-7c82-4ac3-9c44-2acb55752779)
+
+![image](https://github.com/user-attachments/assets/235a7805-a1a9-4aa1-a1cb-848141e650c9)
+
+Mengambil masing-masing kolom `ISBN`, `title`, `author`, dan `year` dari DataFrame `book` lalu mengubahnya menjadi list dengan `.tolist()`
+- Menyusun DataFrame baru bernama `new_book` yang berisi kolom `book_ISBN`, `book_title`, `book_author`, dan `book_year_of_publication`
+- Mengonversi kolom `book_year_of_publication` menjadi tipe data integer agar kompatibel dengan proses modeling dan analisis statistik
+- Mengonversi `book_year_of_publication` menjadi tipe integer untuk memastikan kompatibilitas dengan proses pemodelan 
+
+
 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
