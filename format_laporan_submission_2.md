@@ -22,8 +22,6 @@
 - Mengidentifikasi metode untuk memberikan rekomendasi buku berdasarkan informasi penulis.
 - Mengetahui cara kerja sistem rekomendasi berdasarkan data rating yang diberikan oleh pengguna.
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
 **Solution Approach**:
 
 Proyek ini mengambil dua pendekatan dalam sistem rekomendasi berbasis machine learning, yaitu:
