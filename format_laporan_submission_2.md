@@ -75,6 +75,10 @@ Distribusi rating menunjukkan banyak pengguna memberikan nilai nol, yang mungkin
 
 Gambar pertama menunjukkan distribusi rating buku. Terlihat ada banyak rating 0, yang mungkin menunjukkan data yang tidak lengkap atau rating kosong. Setelah itu, distribusi rating agak merata dengan sebagian kecil buku yang mendapat rating tinggi (8, 9, 10). Ini bisa menunjukkan bahwa sebagian besar buku diberi rating rendah, atau banyak data yang tidak memiliki rating.
 
+![download](https://github.com/user-attachments/assets/acea94b0-52ef-4772-85c7-6ef8142fc49b)
+
+Grafik ini menunjukkan jumlah buku yang diterbitkan setiap tahun. Terlihat bahwa penerbitan buku mulai meningkat pesat setelah tahun 1980, dengan lonjakan terbesar di sekitar tahun 2000-an. Ini menandakan adanya perubahan besar dalam industri penerbitan, mungkin terkait dengan kemajuan teknologi percetakan dan digitalisasi. Setelah 2010, jumlah penerbitan mulai stagnan atau menurun sedikit, yang bisa disebabkan oleh tren baru seperti e-book dan self-publishing.
+
 ![download](https://github.com/user-attachments/assets/0c958499-f330-4779-a95e-d5e70b341918)
 
 Grafik ini menunjukkan jumlah rating yang diberikan per tahun publikasi buku. Setiap batang mewakili jumlah total rating untuk buku-buku yang diterbitkan pada tahun tertentu, dengan warna yang mewakili kategori rating (misalnya, rating 0 hingga rating 10).
@@ -91,7 +95,8 @@ Secara keseluruhan, grafik ini menunjukkan bahwa buku yang lebih baru cenderung 
 
 ![download](https://github.com/user-attachments/assets/695a7cc9-f00f-4771-bcfe-673e095c7fc5)
 
-![download](https://github.com/user-attachments/assets/e64ba59b-fc62-4ac2-9853-42d5b18c958c)
+![download](https://github.com/user-attachments/assets/04f00bad-5b29-4c36-85c4-60c110063a05)
+
 
 ### Matriks Korelasi
 
