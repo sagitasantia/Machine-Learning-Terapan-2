@@ -99,6 +99,10 @@ Grafik ini menunjukkan jumlah rating yang diberikan per tahun publikasi buku. Se
 
 ![download](https://github.com/user-attachments/assets/04f00bad-5b29-4c36-85c4-60c110063a05)
 
+Grafik ini menunjukkan hubungan antara **rating** dan **tahun publikasi** buku dari beberapa penulis terkenal. Setiap titik mewakili buku yang diterbitkan pada tahun tertentu dan diberi rating oleh pembaca. Warna titik menunjukkan penulis buku tersebut.
+
+Dari grafik, terlihat bahwa sebagian besar buku dengan **rating tinggi** (di atas 8) diterbitkan antara **1990-an hingga 2000-an**, yang menunjukkan bahwa buku-buku yang lebih baru mendapatkan rating yang lebih tinggi. Beberapa penulis seperti **Stephen King**, **Danielle Steel**, dan **John Grisham** menunjukkan bahwa **buku-buku baru** cenderung mendapatkan rating yang lebih tinggi, sementara beberapa penulis dengan karier lebih lama, seperti **Mary Higgins Clark**, memiliki rating yang lebih beragam, meskipun dengan angka lebih rendah. Grafik ini memberikan gambaran jelas bahwa **buku yang lebih baru** mendapatkan lebih banyak perhatian positif dari pembaca.
+
 
 ### Matriks Korelasi
 
