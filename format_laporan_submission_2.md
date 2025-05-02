@@ -87,7 +87,7 @@ Namun, setelah tahun 2010, terdapat lonjakan besar pada rata-rata rating, dengan
 
 Secara keseluruhan, grafik ini menunjukkan bahwa buku yang lebih baru cenderung mendapatkan rating yang lebih tinggi, sementara buku yang lebih lama memiliki rating yang lebih konsisten dan lebih rendah.
 
-![download](https://github.com/user-attachments/assets/04f00bad-5b29-4c36-85c4-60c110063a05)
+![download](https://github.com/user-attachments/assets/695a7cc9-f00f-4771-bcfe-673e095c7fc5)
 
 ### EDA Multivariate
 
@@ -95,9 +95,7 @@ Secara keseluruhan, grafik ini menunjukkan bahwa buku yang lebih baru cenderung 
 
 Grafik ini menunjukkan jumlah rating yang diberikan per tahun publikasi buku. Setiap batang mewakili jumlah total rating untuk buku-buku yang diterbitkan pada tahun tertentu, dengan warna yang mewakili kategori rating (misalnya, rating 0 hingga rating 10).
 
-![download](https://github.com/user-attachments/assets/695a7cc9-f00f-4771-bcfe-673e095c7fc5)
-
-
+![download](https://github.com/user-attachments/assets/04f00bad-5b29-4c36-85c4-60c110063a05)
 
 
 ### Matriks Korelasi
