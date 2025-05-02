@@ -89,6 +89,8 @@ Secara keseluruhan, grafik ini menunjukkan bahwa buku yang lebih baru cenderung 
 
 ![download](https://github.com/user-attachments/assets/695a7cc9-f00f-4771-bcfe-673e095c7fc5)
 
+Grafik ini menunjukkan rata-rata rating per penerbit (publisher). Setiap batang menggambarkan rata-rata rating yang diberikan untuk buku yang diterbitkan oleh masing-masing penerbit. Dari grafik, bisa terlihat bahwa beberapa penerbit, seperti Penguin Books dan Perennial, mendapatkan rata-rata rating yang lebih tinggi, sementara penerbit lain seperti Silhouette memiliki rating yang lebih rendah.
+
 ### EDA Multivariate
 
 ![download](https://github.com/user-attachments/assets/0c958499-f330-4779-a95e-d5e70b341918)
