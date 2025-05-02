@@ -73,9 +73,11 @@ Distribusi rating menunjukkan banyak pengguna memberikan nilai nol, yang mungkin
 
 ![download](https://github.com/user-attachments/assets/5fbf081a-13a9-4ff1-a15a-5a9e62af2f0c)
 
-![download](https://github.com/user-attachments/assets/68e26465-1cc5-4134-9fbe-ee4ceca6ecb0)
+Gambar pertama menunjukkan distribusi rating buku. Terlihat ada banyak rating 0, yang mungkin menunjukkan data yang tidak lengkap atau rating kosong. Setelah itu, distribusi rating agak merata dengan sebagian kecil buku yang mendapat rating tinggi (8, 9, 10). Ini bisa menunjukkan bahwa sebagian besar buku diberi rating rendah, atau banyak data yang tidak memiliki rating.
 
 ![download](https://github.com/user-attachments/assets/0c958499-f330-4779-a95e-d5e70b341918)
+
+Grafik ini menunjukkan jumlah rating yang diberikan per tahun publikasi buku. Setiap batang mewakili jumlah total rating untuk buku-buku yang diterbitkan pada tahun tertentu, dengan warna yang mewakili kategori rating (misalnya, rating 0 hingga rating 10).
 
 ![download](https://github.com/user-attachments/assets/a5a427de-10d5-4b15-8acf-700fc7bc39df)
 
