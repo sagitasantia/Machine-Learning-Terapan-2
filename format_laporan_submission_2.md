@@ -130,16 +130,6 @@ Mengambil masing-masing kolom `ISBN`, `title`, `author`, dan `year` dari DataFra
 - Mengonversi kolom `book_year_of_publication` menjadi tipe data integer agar kompatibel dengan proses modeling dan analisis statistik
 - Mengonversi `book_year_of_publication` menjadi tipe integer untuk memastikan kompatibilitas dengan proses pemodelan 
 
-![image](https://github.com/user-attachments/assets/9188c44b-4e6e-43d7-8bb3-15117e5f05c1)
-
-📄 TF-IDF digunakan untuk mengubah teks (nama penulis) menjadi angka yang mewakili seberapa unik kata tersebut.
-
-![image](https://github.com/user-attachments/assets/1bd0eed7-3ffe-46f4-b45a-c8ed7c97cfdd)
-
-Kode `tfidf_matrix = tf.fit_transform(new_book['book_author'])` mengubah nama-nama penulis jadi angka agar bisa dihitung kemiripannya.
-
-`tfidf_matrix.shape` hasilnya `(25000, 10204)` artinya ada 25.000 data penulis dan 10.204 kata unik dari nama-nama penulis.
-
 ![image](https://github.com/user-attachments/assets/2877a0bf-26e2-4795-b359-7fbe7d4a3dbf)
 ![image](https://github.com/user-attachments/assets/ae2a55fb-43a4-445a-9f9f-94e61f02b81e)
 
@@ -154,21 +144,57 @@ Setelah data rating diubah menjadi tipe angka, kode ini menunjukkan jumlah pengg
 mengacak urutan data dalam dataset rating dengan menggunakan fungsi .sample(frac=1, random_state=42). Hasilnya adalah data yang sudah diacak, yang memudahkan untuk membagi dataset menjadi data latih dan data uji secara acak.
 
 ## Modeling
-Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
+### Content Based Filtering
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menyajikan dua solusi rekomendasi dengan algoritma yang berbeda.
-- Menjelaskan kelebihan dan kekurangan dari solusi/pendekatan yang dipilih.
+Content-Based Filtering memiliki kelebihan utama dalam hal personalisasi yang tinggi. Model ini memberikan rekomendasi yang sangat relevan dengan preferensi pengguna berdasarkan atribut buku yang sudah diketahui, seperti penulis, genre, atau deskripsi buku. Karena model ini mengandalkan data tentang buku itu sendiri, ia tidak membutuhkan data pengguna lain untuk memberikan rekomendasi, yang menjadikannya sangat berguna terutama pada sistem dengan sedikit pengguna atau data interaksi yang terbatas. Selain itu, model ini memiliki transparansi yang jelas, karena kita bisa dengan mudah menjelaskan mengapa sebuah buku direkomendasikan, misalnya karena buku tersebut memiliki genre atau penulis yang serupa dengan buku yang sudah disukai pengguna. Ini memungkinkan pengguna untuk memahami dasar dari setiap rekomendasi yang diberikan. Kelebihan lainnya adalah kemampuannya untuk memberikan rekomendasi yang sangat spesifik dan langsung sesuai dengan kebutuhan individu, sehingga meningkatkan pengalaman pengguna.
 
-## Evaluation
-Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
+- Modeling menggunakan fungsi `TfidfVectorizer()` dari library sklearn. Di sini, beberapa kata penting dari kolom `book_author` akan diambil untuk mengidentifikasi sistem rekomendasi berdasarkan penulis yang sama.
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+![image](https://github.com/user-attachments/assets/9188c44b-4e6e-43d7-8bb3-15117e5f05c1)
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+- Selanjutnya, lakukan proses fit dan transformasi pada daftar book_author menggunakan TfidfVectorizer(), yang akan mengubahnya menjadi matriks. Sehingga tercipta output seperti dibawah ini. 
 
-**---Ini adalah bagian akhir laporan---**
+![image](https://github.com/user-attachments/assets/a65c0e33-ab99-4b41-b150-d08ca3445219)
+
+Selanjutnya, hitung derajat kesamaan antar buku menggunakan teknik cosine similarity. Dengan menggunakan fungsi `cosine_similarity` dari library sklearn, kita dapat menghitung seberapa mirip setiap buku berdasarkan representasi numeriknya, yang menghasilkan output berupa matriks kesamaan antar buku.
+
+
+### Evaluation Content Based Filtering
+
+Evaluasi model dilakukan dengan mengukur akurasi hasil rekomendasi berdasarkan buku yang telah dibaca oleh pengguna. Akurasi diukur berdasarkan seberapa sering buku yang direkomendasikan memiliki penulis yang sama dengan buku yang telah dibaca oleh pengguna sebelumnya. Model ini menggunakan teknik pengukuran precision untuk menentukan akurasi rekomendasi. 
+
+![image](https://github.com/user-attachments/assets/9f7607dd-ad45-4404-8c94-b817b166cb33)
+
+Hasil rekomendasinya yang diberikan oleh sistem berdasarkan buku di atas yaitu.
+
+![image](https://github.com/user-attachments/assets/b8b0016d-1833-4395-9792-e1ce5b457a47)
+
+### Collaborative Filtering
+
+ollaborative Filtering, di sisi lain, memiliki kelebihan dalam hal kemampuan untuk memanfaatkan data dari banyak pengguna untuk memberikan rekomendasi. Dengan mengandalkan pola interaksi antara pengguna dan buku, model ini dapat merekomendasikan buku yang mungkin tidak terduga oleh pengguna, berdasarkan preferensi pengguna lain yang memiliki kesamaan. Hal ini membuat Collaborative Filtering sangat efektif untuk menemukan buku yang relevan yang mungkin tidak dikenal oleh pengguna sebelumnya, memperkenalkan variasi dalam rekomendasi. Selain itu, model ini semakin kuat seiring dengan pertambahan jumlah pengguna dan data interaksi, karena semakin banyak data yang tersedia, semakin akurat sistem dalam memberikan rekomendasi. Salah satu keunggulan Collaborative Filtering adalah kemampuannya untuk memberikan rekomendasi yang lebih luas, yang tidak terikat pada atribut spesifik buku, melainkan lebih pada preferensi kolektif dari komunitas pengguna. Namun, kelemahan dari model ini adalah adanya masalah "cold start", yaitu ketika ada buku baru atau pengguna baru yang belum memiliki cukup interaksi untuk membuat rekomendasi yang relevan.
+
+- Langkah pertama adalah mengetahui berapa banyak pengguna (user) dan buku (book) yang ada dalam dataset. Ini penting untuk membuat embedding layer nantinya.
+
+![image](https://github.com/user-attachments/assets/dcf192be-7356-4ed2-981b-6a0e195845f4)
+
+- pembagian data untuk model rekomendasi buku. Data pengguna dan buku diproses, kemudian rating dinormalisasi ke rentang 0 hingga 1. Selanjutnya, 70% data digunakan untuk melatih model, sisanya untuk pengujian.
+
+![image](https://github.com/user-attachments/assets/af466223-b830-484c-9b1a-88dc7d3e2637)
+
+- Selama training, model belajar memprediksi rating dari data user dan buku yang telah di-embed. Setiap epoch akan menghasilkan nilai loss dan RMSE yang digunakan untuk evaluasi.
+
+![download](https://github.com/user-attachments/assets/3fa17a65-276d-4d5d-8b99-51d832a24a2b)
+
+- model mengalami penurunan yang stabil dalam loss dan RMSE baik pada data pelatihan maupun data validasi, meskipun ada sedikit fluktuasi pada epoch tertentu. Model terus memperbaiki dirinya selama 20 epoch, tetapi ada sedikit tanda bahwa penurunan error mulai melambat setelah beberapa epoch terakhir, yang mungkin menunjukkan bahwa model sudah mulai mencapai titik optimumnya.
+
+- hasil rekomendasinya sebagai berikut.
+  
+![image](https://github.com/user-attachments/assets/08751636-fe51-4174-bb1a-c88b0a01943f)
+
+
+## Kesimpulan
+
+   
 
 _Catatan:_
 - _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
