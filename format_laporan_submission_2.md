@@ -103,7 +103,6 @@ Grafik ini menunjukkan hubungan antara **rating** dan **tahun publikasi** buku d
 
 Dari grafik, terlihat bahwa sebagian besar buku dengan **rating tinggi** (di atas 8) diterbitkan antara **1990-an hingga 2000-an**, yang menunjukkan bahwa buku-buku yang lebih baru mendapatkan rating yang lebih tinggi. Beberapa penulis seperti **Stephen King**, **Danielle Steel**, dan **John Grisham** menunjukkan bahwa **buku-buku baru** cenderung mendapatkan rating yang lebih tinggi, sementara beberapa penulis dengan karier lebih lama, seperti **Mary Higgins Clark**, memiliki rating yang lebih beragam, meskipun dengan angka lebih rendah. Grafik ini memberikan gambaran jelas bahwa **buku yang lebih baru** mendapatkan lebih banyak perhatian positif dari pembaca.
 
-
 ### Matriks Korelasi
 
 ![download](https://github.com/user-attachments/assets/5787c921-478a-4986-acdf-c7a699b56d2d)
@@ -130,11 +129,28 @@ Mengambil masing-masing kolom `ISBN`, `title`, `author`, dan `year` dari DataFra
 - Mengonversi kolom `book_year_of_publication` menjadi tipe data integer agar kompatibel dengan proses modeling dan analisis statistik
 - Mengonversi `book_year_of_publication` menjadi tipe integer untuk memastikan kompatibilitas dengan proses pemodelan 
 
+![image](https://github.com/user-attachments/assets/9188c44b-4e6e-43d7-8bb3-15117e5f05c1)
 
+📄 TF-IDF digunakan untuk mengubah teks (nama penulis) menjadi angka yang mewakili seberapa unik kata tersebut.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+![image](https://github.com/user-attachments/assets/1bd0eed7-3ffe-46f4-b45a-c8ed7c97cfdd)
+
+Kode `tfidf_matrix = tf.fit_transform(new_book['book_author'])` mengubah nama-nama penulis jadi angka agar bisa dihitung kemiripannya.
+
+`tfidf_matrix.shape` hasilnya `(25000, 10204)` artinya ada 25.000 data penulis dan 10.204 kata unik dari nama-nama penulis.
+
+![image](https://github.com/user-attachments/assets/2877a0bf-26e2-4795-b359-7fbe7d4a3dbf)
+![image](https://github.com/user-attachments/assets/ae2a55fb-43a4-445a-9f9f-94e61f02b81e)
+
+mengubah ID pengguna menjadi angka agar model bisa memprosesnya dengan lebih mudah. Ini dilakukan dengan mengambil semua ID unik dari pengguna dan memberi angka urut untuk masing-masing ID. 
+
+![image](https://github.com/user-attachments/assets/a1d59b46-0a3c-4551-8887-05df98751d2a)
+
+Setelah data rating diubah menjadi tipe angka, kode ini menunjukkan jumlah pengguna (679), jumlah buku (4688), dan rentang rating dari 0 hingga 10.
+
+![image](https://github.com/user-attachments/assets/d50661d1-794f-4bdb-837a-f84ac36266de)
+
+mengacak urutan data dalam dataset rating dengan menggunakan fungsi .sample(frac=1, random_state=42). Hasilnya adalah data yang sudah diacak, yang memudahkan untuk membagi dataset menjadi data latih dan data uji secara acak.
 
 ## Modeling
 Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
