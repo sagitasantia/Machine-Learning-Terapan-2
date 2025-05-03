@@ -120,6 +120,7 @@ Dikarenakan jumlah data yang sangat besar, dilakukan pengambilan sampel agar pro
 ![image](https://github.com/user-attachments/assets/3c8078de-92e7-43c3-ba47-39a213f44a7d)
 
 Menghapus data duplikat dan nilai kosong pada kolom-kolom penting seperti author dan Publisher
+
 ![image](https://github.com/user-attachments/assets/f1dda7fa-7c82-4ac3-9c44-2acb55752779)
 
 ![image](https://github.com/user-attachments/assets/235a7805-a1a9-4aa1-a1cb-848141e650c9)
