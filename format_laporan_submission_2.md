@@ -194,8 +194,12 @@ ollaborative Filtering, di sisi lain, memiliki kelebihan dalam hal kemampuan unt
 
 ## Kesimpulan
 
-   
+Proyek ini menggunakan dua metode rekomendasi, yaitu **Content-Based Filtering** dan **Collaborative Filtering**. Content-Based Filtering merekomendasikan buku berdasarkan kesamaan penulis dengan buku yang sudah disukai pengguna. Sementara itu, Collaborative Filtering memanfaatkan rating dari pengguna lain untuk memberikan rekomendasi buku dengan rating tinggi.
 
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+Dengan kedua pendekatan ini, proyek berhasil menjawab dua masalah utama: bagaimana merekomendasikan buku berdasarkan kesamaan penulis dan bagaimana menyusun rekomendasi berdasarkan rating pengguna lain. Metode Content-Based Filtering fokus pada penulis, sementara Collaborative Filtering mengandalkan data rating pengguna lain untuk memperluas variasi rekomendasi.
+
+   
+## REFERENSI 
+
+- https://journal.stekom.ac.id/index.php/elkom/article/view/1927/1482
+- https://bisa.ai/portofolio/detail/MzM4OQ
