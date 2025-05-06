@@ -275,10 +275,41 @@ Dari dua metode yang digunakan dalam sistem rekomendasi buku, yaitu **Content-Ba
 
 ### Evaluation
 
-**Metrik Evaluasi:**
+Dalam proyek sistem rekomendasi buku ini, dua metrik utama digunakan untuk mengevaluasi kinerja masing-masing model, yaitu Akurasi untuk Content-Based Filtering dan Root Mean Squared Error (RMSE) untuk Collaborative Filtering. Metrik ini dipilih karena masing-masing sesuai dengan tujuan dan karakteristik dari kedua metode yang digunakan.
 
-* **Content-Based Filtering** menggunakan **akurasi** sebagai metrik evaluasi, dengan hasil **80%**, yang menandakan bahwa model dapat memberikan rekomendasi yang sangat relevan berdasarkan penulis buku yang disukai pengguna.
-* **Collaborative Filtering** menggunakan **RMSE** untuk mengukur akurasi prediksi rating. Pelatihan menunjukkan penurunan **RMSE** yang konsisten, dari **0.4298** pada epoch pertama hingga **0.3475** pada epoch terakhir.
+- Akurasi (Accuracy) untuk Content-Based Filtering:
+
+Mengapa memilih akurasi?
+
+Akurasi digunakan untuk mengukur seberapa baik rekomendasi yang diberikan oleh model sesuai dengan preferensi pengguna, terutama berdasarkan penulis yang disukai oleh pengguna. Akurasi dihitung dengan membandingkan rekomendasi yang diberikan dengan preferensi atau minat pengguna.
+
+Model Content-Based Filtering bekerja dengan mempelajari penulis atau genre buku yang sudah disukai pengguna, dan rekomendasi yang relevan diharapkan bisa lebih tepat sesuai dengan keinginan pengguna.
+
+- Cara menghitung akurasi:
+
+Akurasi dihitung dengan melihat persentase rekomendasi yang sesuai dengan preferensi pengguna, misalnya apakah buku yang direkomendasikan oleh sistem sesuai dengan apa yang biasanya disukai oleh pengguna (berdasarkan penulis yang mereka sukai).
+
+Hasil 80% akurasi menunjukkan bahwa sistem dapat memberikan rekomendasi yang cukup tepat sesuai dengan penulis buku yang disukai oleh pengguna, namun masih ada ruang untuk perbaikan agar dapat lebih relevan lagi.
+
+Root Mean Squared Error (RMSE) untuk Collaborative Filtering:
+
+Mengapa memilih RMSE?
+
+RMSE digunakan untuk mengukur seberapa besar kesalahan atau selisih antara rating yang diprediksi oleh model dan rating asli yang diberikan oleh pengguna. RMSE cocok untuk Collaborative Filtering karena sistem ini memprediksi rating buku berdasarkan perilaku dan rating pengguna lain yang memiliki kesamaan preferensi.
+
+RMSE memberikan gambaran yang jelas mengenai seberapa baik model dalam memprediksi rating yang akan diberikan pengguna terhadap buku yang belum mereka beri rating.
+
+- Cara menghitung RMSE:
+
+RMSE dihitung dengan menghitung selisih antara rating yang diprediksi oleh model dengan rating yang sebenarnya. Semakin kecil nilai RMSE, semakin akurat prediksi rating yang diberikan oleh model.
+
+Pada hasil pelatihan, RMSE menurun dari 0.4298 pada epoch pertama menjadi 0.3475 pada epoch terakhir, yang menunjukkan bahwa model Collaborative Filtering semakin baik dalam memprediksi rating yang akan diberikan oleh pengguna seiring berjalannya waktu.
+
+Relevansi Metrik dengan Proyek
+Akurasi sangat relevan untuk Content-Based Filtering karena tujuan utama model ini adalah memberikan rekomendasi yang tepat berdasarkan preferensi pengguna terhadap penulis atau genre. Metrik ini akan menunjukkan seberapa baik sistem dalam mencocokkan rekomendasi dengan minat pengguna yang sudah ada.
+
+RMSE sangat cocok untuk Collaborative Filtering karena model ini berfokus pada memahami hubungan antar pengguna dan memberikan rekomendasi berdasarkan rating atau penilaian pengguna lain. Metrik ini membantu mengukur seberapa akurately model memprediksi rating yang akan diberikan oleh pengguna, yang merupakan tujuan utama dari metode Collaborative Filtering.
+
 
 **Hasil Evaluasi:**
 
