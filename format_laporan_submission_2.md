@@ -104,6 +104,10 @@ Tahun yang sangat tua (misalnya tahun 1929, 1952, 1961, 1968, 1966, dan 1970) di
 
 Secara keseluruhan, output ini menunjukkan bahwa tidak ada duplikasi dalam dataset book, dan tidak ada nilai yang hilang pada kolom-kolom yang ada.
 
+![image](https://github.com/user-attachments/assets/1e1a7139-de70-400d-a2db-797a089b9fa2)
+
+tidak terdapat duplicated juga dalam dataset rating
+
 ## EDA 
 
 ### EDA Univariate
