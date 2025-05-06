@@ -223,7 +223,7 @@ Evaluasi model dilakukan dengan mengukur akurasi hasil rekomendasi berdasarkan b
 
 ![image](https://github.com/user-attachments/assets/9f7607dd-ad45-4404-8c94-b817b166cb33)
 
-Hasil rekomendasinya yang diberikan oleh sistem berdasarkan buku di atas yaitu.
+- Hasil rekomendasinya yang diberikan oleh sistem berdasarkan buku di atas yaitu.
 
 ![image](https://github.com/user-attachments/assets/b8b0016d-1833-4395-9792-e1ce5b457a47)
 
@@ -267,55 +267,59 @@ ollaborative Filtering, di sisi lain, memiliki kelebihan dalam hal kemampuan unt
 
 ### Kesimpulan
 
-Dari dua metode yang digunakan dalam sistem rekomendasi buku, yaitu **Content-Based Filtering** dan **Collaborative Filtering**, keduanya memiliki keunggulan masing-masing.
+Dari dua metode yang digunakan dalam sistem rekomendasi buku, yaitu **Content-Based Filtering** dan **Collaborative Filtering**, keduanya memiliki keunggulan masing-masing dalam menjawab **bagaimana merancang sistem yang efektif dalam memberikan rekomendasi buku yang relevan dengan preferensi pengguna berdasarkan penulis buku yang mereka sukai**, serta **bagaimana memastikan rekomendasi buku juga mempertimbangkan popularitas atau penilaian tertinggi dari pengguna lain untuk meningkatkan kepuasan pengguna**.
 
-* **Content-Based Filtering** menggunakan **akurasi** sebagai metrik evaluasi dengan hasil yang mencapai **80%**. Metode ini bekerja dengan baik dalam memberikan rekomendasi berdasarkan penulis yang disukai pengguna, sehingga sangat cocok untuk rekomendasi buku dengan kriteria yang jelas berdasarkan penulis.
+* **Content-Based Filtering** efektif dalam memberikan rekomendasi buku berdasarkan **penulis buku yang disukai pengguna**. Sistem ini dirancang untuk **menganalisis kesamaan antara penulis buku** dan memberikan rekomendasi berdasarkan **preferensi spesifik pengguna** terhadap penulis tertentu. Dengan hasil **akurasi model mencapai 80%**, ini menunjukkan bahwa model ini berhasil memberikan rekomendasi yang tepat berdasarkan preferensi pengguna terhadap penulis.
 
-* **Collaborative Filtering** di sisi lain, menggunakan **Root Mean Squared Error (RMSE)** untuk mengukur seberapa baik model dalam memprediksi rating yang diberikan oleh pengguna. Hasil pelatihan menunjukkan penurunan **RMSE** secara konsisten selama 20 epoch, yang menandakan peningkatan kemampuan model dalam memprediksi rating. **RMSE terakhir** berada pada nilai **0.3475**, yang menunjukkan performa model yang semakin baik seiring berjalannya waktu.
-
-**Collaborative Filtering** sangat berguna ketika kita ingin memberikan rekomendasi berdasarkan pola interaksi antar pengguna, meskipun memerlukan dataset yang lebih besar dan kompleks.
+* **Collaborative Filtering** dapat memberikan rekomendasi buku berdasarkan **rating pengguna lain** dan **popularitas buku**, yang memungkinkan sistem untuk **mempertimbangkan penilaian tertinggi dari pengguna lain** dalam meningkatkan kepuasan pengguna. Dengan menggunakan **RMSE** untuk mengukur kesalahan prediksi, model ini menunjukkan penurunan **RMSE** yang konsisten, yang menandakan peningkatan akurasi dalam memprediksi rating buku berdasarkan data pengguna lain.
 
 ### Evaluation
 
 **Metrik Evaluasi:**
 
-* **Content-Based Filtering** menggunakan **akurasi** sebagai metrik, yang memberikan hasil 80% untuk tingkat kesesuaian rekomendasi.
-* **Collaborative Filtering** menggunakan **RMSE** untuk mengukur seberapa akurat model dalam memprediksi rating pengguna. Hasil dari pelatihan menunjukkan penurunan RMSE dari **0.4298** pada epoch pertama hingga **0.3475** pada epoch terakhir.
+* **Content-Based Filtering** menggunakan **akurasi** sebagai metrik evaluasi, dengan hasil **80%**, yang menandakan bahwa model dapat memberikan rekomendasi yang sangat relevan berdasarkan penulis buku yang disukai pengguna.
+* **Collaborative Filtering** menggunakan **RMSE** untuk mengukur akurasi prediksi rating. Pelatihan menunjukkan penurunan **RMSE** yang konsisten, dari **0.4298** pada epoch pertama hingga **0.3475** pada epoch terakhir.
 
 **Hasil Evaluasi:**
 
-1. **Content-Based Filtering** memberikan hasil yang lebih cepat dan langsung, dengan **akurasi tinggi** pada rekomendasi berdasarkan penulis buku yang disukai pengguna.
-2. **Collaborative Filtering** memberikan **RMSE lebih rendah** yang menandakan bahwa model dapat memprediksi rating dengan lebih baik, namun membutuhkan pelatihan yang lebih lama dan data lebih banyak.
+1. **Content-Based Filtering**:
+
+   * Model ini memberikan hasil yang baik dalam **memberikan rekomendasi berdasarkan penulis buku** yang relevan dengan preferensi pengguna. Dengan **akurasi 80%**, model ini menunjukkan bahwa pendekatan berbasis penulis memberikan hasil yang efektif.
+
+2. **Collaborative Filtering**:
+
+   * Model ini memberikan hasil yang baik dalam **mempertimbangkan rating pengguna lain** untuk memberikan rekomendasi berdasarkan **popularitas buku**. Dengan **penurunan RMSE** yang menunjukkan peningkatan akurasi prediksi rating, metode ini terbukti efektif dalam memberikan rekomendasi berdasarkan pola rating pengguna lain.
 
 **Komparasi Skema:**
 
-* **Content-Based Filtering** lebih cepat dalam memberikan rekomendasi dan dapat dengan mudah diterapkan berdasarkan fitur yang jelas (penulis), namun terbatas pada fitur tersebut.
-* **Collaborative Filtering** memanfaatkan pola antar pengguna dan dapat memberikan variasi rekomendasi berdasarkan interaksi pengguna, namun membutuhkan lebih banyak data dan pelatihan yang lebih panjang.
+* **Content-Based Filtering** lebih cocok untuk **memberikan rekomendasi berbasis penulis**, dan memberikan hasil yang cepat serta relevan.
+* **Collaborative Filtering** lebih tepat untuk **mempertimbangkan rating dan popularitas buku** berdasarkan data pengguna lain, meskipun memerlukan dataset yang lebih besar dan pelatihan yang lebih lama.
 
 **Model Terbaik:**
 
-Berdasarkan hasil evaluasi, **Content-Based Filtering** lebih disarankan untuk sistem rekomendasi yang lebih sederhana dan berbasis penulis buku. Namun, jika fokusnya adalah untuk memberikan rekomendasi berdasarkan pola perilaku pengguna lain, maka **Collaborative Filtering** adalah pilihan yang lebih baik meskipun lebih kompleks.
+* **Content-Based Filtering** lebih disarankan untuk **rekomendasi buku berdasarkan penulis**, sesuai dengan **problem statement pertama**.
+* **Collaborative Filtering** lebih baik digunakan untuk **memberikan rekomendasi berdasarkan rating dan popularitas**, sesuai dengan **problem statement kedua**.
 
 ### Hubungan dengan Business Understanding
 
-* **Problem Statement 1**: Apakah sistem ini dapat merekomendasikan buku yang relevan dengan preferensi pengguna berdasarkan penulis?
+* **Problem Statement 1**: **Bagaimana merancang sistem yang efektif dalam memberikan rekomendasi buku yang relevan dengan preferensi pengguna berdasarkan penulis buku yang mereka sukai?**
 
-  * **Jawaban**: Ya, **Content-Based Filtering** berhasil memberikan rekomendasi yang relevan berdasarkan penulis buku.
+  * **Jawaban**: **Content-Based Filtering** sangat efektif dalam memberikan rekomendasi yang relevan berdasarkan **penulis buku** yang disukai pengguna.
 
-* **Problem Statement 2**: Apakah sistem ini mempertimbangkan rating pengguna lain dalam memberikan rekomendasi?
+* **Problem Statement 2**: **Bagaimana memastikan rekomendasi buku juga mempertimbangkan popularitas atau penilaian tertinggi dari pengguna lain untuk meningkatkan kepuasan pengguna?**
 
-  * **Jawaban**: Ya, **Collaborative Filtering** memberikan rekomendasi berdasarkan pola rating pengguna lain.
+  * **Jawaban**: **Collaborative Filtering** memberikan rekomendasi yang mempertimbangkan rating dan popularitas buku berdasarkan **penilaian pengguna lain**.
 
 * **Goals**:
 
-  * **Goal 1**: Membangun sistem rekomendasi yang akurat berdasarkan penulis buku.
+  * **Goal 1**: Membangun sistem rekomendasi yang akurat berdasarkan penulis buku yang disukai pengguna.
 
     * **Jawaban**: Telah tercapai dengan baik menggunakan **Content-Based Filtering**.
   * **Goal 2**: Mengukur dan mengevaluasi efektivitas sistem rekomendasi berdasarkan rating pengguna lain.
 
-    * **Jawaban**: Telah tercapai dengan menggunakan **Collaborative Filtering** dan evaluasi RMSE.
+    * **Jawaban**: Telah tercapai dengan menggunakan **Collaborative Filtering** dan evaluasi **RMSE**.
 
-Dengan demikian, kedua model ini telah berhasil mencapai goal yang diharapkan dan memberikan dampak positif dalam meningkatkan akurasi serta relevansi rekomendasi buku sesuai dengan preferensi pengguna.
+Dengan demikian, kedua model ini telah berhasil mencapai tujuan yang diharapkan, memberikan dampak positif dalam meningkatkan akurasi serta relevansi rekomendasi buku sesuai dengan **preferensi pengguna** dan **rating pengguna lain**.
 
 
    
