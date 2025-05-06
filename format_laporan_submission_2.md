@@ -265,14 +265,6 @@ ollaborative Filtering, di sisi lain, memiliki kelebihan dalam hal kemampuan unt
 ![image](https://github.com/user-attachments/assets/08751636-fe51-4174-bb1a-c88b0a01943f)
 
 
-### Kesimpulan
-
-Dari dua metode yang digunakan dalam sistem rekomendasi buku, yaitu **Content-Based Filtering** dan **Collaborative Filtering**, keduanya memiliki keunggulan masing-masing dalam menjawab **bagaimana merancang sistem yang efektif dalam memberikan rekomendasi buku yang relevan dengan preferensi pengguna berdasarkan penulis buku yang mereka sukai**, serta **bagaimana memastikan rekomendasi buku juga mempertimbangkan popularitas atau penilaian tertinggi dari pengguna lain untuk meningkatkan kepuasan pengguna**.
-
-* **Content-Based Filtering** efektif dalam memberikan rekomendasi buku berdasarkan **penulis buku yang disukai pengguna**. Sistem ini dirancang untuk **menganalisis kesamaan antara penulis buku** dan memberikan rekomendasi berdasarkan **preferensi spesifik pengguna** terhadap penulis tertentu. Dengan hasil **akurasi model mencapai 80%**, ini menunjukkan bahwa model ini berhasil memberikan rekomendasi yang tepat berdasarkan preferensi pengguna terhadap penulis.
-
-* **Collaborative Filtering** dapat memberikan rekomendasi buku berdasarkan **rating pengguna lain** dan **popularitas buku**, yang memungkinkan sistem untuk **mempertimbangkan penilaian tertinggi dari pengguna lain** dalam meningkatkan kepuasan pengguna. Dengan menggunakan **RMSE** untuk mengukur kesalahan prediksi, model ini menunjukkan penurunan **RMSE** yang konsisten, yang menandakan peningkatan akurasi dalam memprediksi rating buku berdasarkan data pengguna lain.
-
 ### Evaluation
 
 Dalam proyek sistem rekomendasi buku ini, dua metrik utama digunakan untuk mengevaluasi kinerja masing-masing model, yaitu Akurasi untuk Content-Based Filtering dan Root Mean Squared Error (RMSE) untuk Collaborative Filtering. Metrik ini dipilih karena masing-masing sesuai dengan tujuan dan karakteristik dari kedua metode yang digunakan.
@@ -349,6 +341,14 @@ RMSE sangat cocok untuk Collaborative Filtering karena model ini berfokus pada m
   * **Goal 2**: Mengukur dan mengevaluasi efektivitas sistem rekomendasi berdasarkan rating pengguna lain.
 
     * **Jawaban**: Telah tercapai dengan menggunakan **Collaborative Filtering** dan evaluasi **RMSE**.
+
+### Kesimpulan
+
+Dari dua metode yang digunakan dalam sistem rekomendasi buku, yaitu **Content-Based Filtering** dan **Collaborative Filtering**, keduanya memiliki keunggulan masing-masing dalam menjawab **bagaimana merancang sistem yang efektif dalam memberikan rekomendasi buku yang relevan dengan preferensi pengguna berdasarkan penulis buku yang mereka sukai**, serta **bagaimana memastikan rekomendasi buku juga mempertimbangkan popularitas atau penilaian tertinggi dari pengguna lain untuk meningkatkan kepuasan pengguna**.
+
+* **Content-Based Filtering** efektif dalam memberikan rekomendasi buku berdasarkan **penulis buku yang disukai pengguna**. Sistem ini dirancang untuk **menganalisis kesamaan antara penulis buku** dan memberikan rekomendasi berdasarkan **preferensi spesifik pengguna** terhadap penulis tertentu. Dengan hasil **akurasi model mencapai 80%**, ini menunjukkan bahwa model ini berhasil memberikan rekomendasi yang tepat berdasarkan preferensi pengguna terhadap penulis.
+
+* **Collaborative Filtering** dapat memberikan rekomendasi buku berdasarkan **rating pengguna lain** dan **popularitas buku**, yang memungkinkan sistem untuk **mempertimbangkan penilaian tertinggi dari pengguna lain** dalam meningkatkan kepuasan pengguna. Dengan menggunakan **RMSE** untuk mengukur kesalahan prediksi, model ini menunjukkan penurunan **RMSE** yang konsisten, yang menandakan peningkatan akurasi dalam memprediksi rating buku berdasarkan data pengguna lain.
 
 Dengan demikian, kedua model ini telah berhasil mencapai tujuan yang diharapkan, memberikan dampak positif dalam meningkatkan akurasi serta relevansi rekomendasi buku sesuai dengan **preferensi pengguna** dan **rating pengguna lain**.
 
