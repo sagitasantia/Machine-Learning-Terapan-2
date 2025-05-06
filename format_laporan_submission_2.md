@@ -100,6 +100,9 @@ Output menampilkan total 9095 data yang dianggap sebagai outlier. Data ini terdi
 Tahun publikasi seperti 0 dianggap sebagai data invalid karena tidak masuk akal secara logika dalam konteks penerbitan buku.
 Tahun yang sangat tua (misalnya tahun 1929, 1952, 1961, 1968, 1966, dan 1970) dianggap outlier karena kemungkinan di luar periode yang diinginkan atau kurang relevan untuk analisis rekomendasi buku terkini.
 
+![image](https://github.com/user-attachments/assets/ef4fd044-77b1-4dd0-824d-d26a7487e8c9)
+
+Secara keseluruhan, output ini menunjukkan bahwa tidak ada duplikasi dalam dataset book, dan tidak ada nilai yang hilang pada kolom-kolom yang ada.
 
 ## EDA 
 
