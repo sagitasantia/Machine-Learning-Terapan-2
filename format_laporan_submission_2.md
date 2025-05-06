@@ -21,8 +21,8 @@ Namun, terdapat tantangan dalam menghubungkan preferensi pengguna dengan rekomen
 
 ### Goals
 
-- Mengidentifikasi metode yang tepat untuk merekomendasikan buku berdasarkan informasi penulis yang relevan dengan preferensi pengguna.
-- Memahami mekanisme dan efektivitas rekomendasi buku berdasarkan data rating dari pengguna lain, guna meningkatkan akurasi rekomendasi.
+- Membangun sistem rekomendasi yang mampu memberikan rekomendasi buku secara akurat berdasarkan penulis yang disukai pengguna.
+- Mengukur dan mengevaluasi efektivitas sistem rekomendasi menggunakan data rating pengguna lain untuk meningkatkan relevansi dan kepuasan pengguna.
 
 **Solution Approach**:
 
@@ -68,6 +68,25 @@ Ratings.csv: Terdiri dari 1.149.780 entri penilaian oleh pengguna, mencakup:
 Berdasarkan hasil eksplorasi awal, tipe data dari kolom Book-Rating dan User-ID adalah numerik, sementara kolom ISBN bersifat objek/string. Pada berkas Books.csv, seluruh kolom bertipe objek, termasuk Year-Of-Publication, sehingga perlu konversi tipe data ke numerik saat tahap praproses.
 
 Distribusi rating menunjukkan banyak pengguna memberikan nilai nol, yang mungkin menandakan tidak memberikan rating eksplisit. Selain itu, beberapa kolom seperti nama penulis dan penerbit memiliki data null yang perlu ditangani. Distribusi tahun terbit menunjukkan rentang tahun yang luas, namun fokus analisis dibatasi pada buku-buku terbitan 1960 hingga 2021 untuk menjaga relevansi data.bahwa pengguna tidak menyukai atau tidak memberikan penilaian eksplisit. Distribusi tahun penerbitan didominasi oleh buku yang terbit antara tahun 1960–2021.
+
+![image](https://github.com/user-attachments/assets/33ba5c74-9f29-4a53-8526-871e5a757b7d)
+
+Perintah rating.isnull().sum() dan book.isnull().sum() digunakan untuk menghitung jumlah nilai missing (null) atau kosong dalam setiap kolom dari dataset rating dan book.
+
+Hasil untuk dataset rating:
+user_id: Tidak ada nilai kosong, semua data lengkap (0 missing).
+ISBN: Tidak ada nilai kosong, semua data lengkap (0 missing).
+rating: Tidak ada nilai kosong, semua data lengkap (0 missing).
+Hasil untuk dataset book:
+ISBN: Tidak ada nilai kosong, semua data lengkap (0 missing).
+title: Tidak ada nilai kosong, semua data lengkap (0 missing).
+author: Ada 2 nilai kosong di kolom penulis.
+year: Tidak ada nilai kosong, semua data lengkap (0 missing).
+Publisher: Ada 2 nilai kosong di kolom penerbit.
+Image-URL-S, Image-URL-M: Tidak ada nilai kosong, semua data lengkap (0 missing).
+Image-URL-L: Ada 3 nilai kosong di kolom URL gambar ukuran besar.
+Dengan kata lain, dataset rating tidak memiliki data yang hilang, sementara dataset book memiliki beberapa nilai yang hilang pada kolom author, Publisher, dan Image-URL-L.
+
 
 ## EDA 
 
@@ -184,6 +203,8 @@ ollaborative Filtering, di sisi lain, memiliki kelebihan dalam hal kemampuan unt
 ![image](https://github.com/user-attachments/assets/af466223-b830-484c-9b1a-88dc7d3e2637)
 
 - Selama training, model belajar memprediksi rating dari data user dan buku yang telah di-embed. Setiap epoch akan menghasilkan nilai loss dan RMSE yang digunakan untuk evaluasi.
+
+### Evaluation Collaborative Filtering
 
 ![download](https://github.com/user-attachments/assets/3fa17a65-276d-4d5d-8b99-51d832a24a2b)
 
