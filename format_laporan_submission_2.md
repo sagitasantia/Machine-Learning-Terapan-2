@@ -77,6 +77,7 @@ Hasil untuk dataset rating:
 user_id: Tidak ada nilai kosong, semua data lengkap (0 missing).
 ISBN: Tidak ada nilai kosong, semua data lengkap (0 missing).
 rating: Tidak ada nilai kosong, semua data lengkap (0 missing).
+
 Hasil untuk dataset book:
 ISBN: Tidak ada nilai kosong, semua data lengkap (0 missing).
 title: Tidak ada nilai kosong, semua data lengkap (0 missing).
@@ -86,6 +87,18 @@ Publisher: Ada 2 nilai kosong di kolom penerbit.
 Image-URL-S, Image-URL-M: Tidak ada nilai kosong, semua data lengkap (0 missing).
 Image-URL-L: Ada 3 nilai kosong di kolom URL gambar ukuran besar.
 Dengan kata lain, dataset rating tidak memiliki data yang hilang, sementara dataset book memiliki beberapa nilai yang hilang pada kolom author, Publisher, dan Image-URL-L.
+
+![image](https://github.com/user-attachments/assets/027c1a37-eed5-4e85-bbf1-b72a44ae8119)
+
+Outliers pada kolom 'rating':
+
+Output menunjukkan tidak ditemukan outlier pada kolom rating, artinya semua nilai rating berada dalam batas normal atau range nilai yang diharapkan.
+
+Outliers pada kolom 'Year-Of-Publication':
+
+Output menampilkan total 9095 data yang dianggap sebagai outlier. Data ini terdiri dari tahun-tahun publikasi buku yang terlalu lama (misalnya, tahun-tahun di bawah 1970) atau bahkan bernilai 0.
+Tahun publikasi seperti 0 dianggap sebagai data invalid karena tidak masuk akal secara logika dalam konteks penerbitan buku.
+Tahun yang sangat tua (misalnya tahun 1929, 1952, 1961, 1968, 1966, dan 1970) dianggap outlier karena kemungkinan di luar periode yang diinginkan atau kurang relevan untuk analisis rekomendasi buku terkini.
 
 
 ## EDA 
@@ -164,21 +177,45 @@ Setelah data rating diubah menjadi tipe angka, kode ini menunjukkan jumlah pengg
 
 mengacak urutan data dalam dataset rating dengan menggunakan fungsi .sample(frac=1, random_state=42). Hasilnya adalah data yang sudah diacak, yang memudahkan untuk membagi dataset menjadi data latih dan data uji secara acak.
 
+![image](https://github.com/user-attachments/assets/9188c44b-4e6e-43d7-8bb3-15117e5f05c1)
+- fungsi `TfidfVectorizer()` dari library sklearn. Di sini, beberapa kata penting dari kolom `book_author` akan diambil untuk mengidentifikasi sistem rekomendasi berdasarkan penulis yang sama.
+- Selanjutnya, lakukan proses fit dan transformasi pada daftar book_author menggunakan TfidfVectorizer(), yang akan mengubahnya menjadi matriks. Sehingga tercipta output seperti dibawah ini. 
+
+![image](https://github.com/user-attachments/assets/a65c0e33-ab99-4b41-b150-d08ca3445219)
+
+hitung derajat kesamaan antar buku menggunakan teknik cosine similarity. Dengan menggunakan fungsi `cosine_similarity` dari library sklearn, kita dapat menghitung seberapa mirip setiap buku berdasarkan representasi numeriknya, yang menghasilkan output berupa matriks kesamaan antar buku.
+
+
 ## Modeling
 ### Content Based Filtering
 
 Content-Based Filtering memiliki kelebihan utama dalam hal personalisasi yang tinggi. Model ini memberikan rekomendasi yang sangat relevan dengan preferensi pengguna berdasarkan atribut buku yang sudah diketahui, seperti penulis, genre, atau deskripsi buku. Karena model ini mengandalkan data tentang buku itu sendiri, ia tidak membutuhkan data pengguna lain untuk memberikan rekomendasi, yang menjadikannya sangat berguna terutama pada sistem dengan sedikit pengguna atau data interaksi yang terbatas. Selain itu, model ini memiliki transparansi yang jelas, karena kita bisa dengan mudah menjelaskan mengapa sebuah buku direkomendasikan, misalnya karena buku tersebut memiliki genre atau penulis yang serupa dengan buku yang sudah disukai pengguna. Ini memungkinkan pengguna untuk memahami dasar dari setiap rekomendasi yang diberikan. Kelebihan lainnya adalah kemampuannya untuk memberikan rekomendasi yang sangat spesifik dan langsung sesuai dengan kebutuhan individu, sehingga meningkatkan pengalaman pengguna.
 
-- Modeling menggunakan fungsi `TfidfVectorizer()` dari library sklearn. Di sini, beberapa kata penting dari kolom `book_author` akan diambil untuk mengidentifikasi sistem rekomendasi berdasarkan penulis yang sama.
+Cara kerja dari pendekatan ini adalah dengan memanfaatkan metode TF-IDF (Term Frequency-Inverse Document Frequency). Metode ini menghitung pentingnya sebuah kata berdasarkan seberapa sering kata tersebut muncul dalam suatu dokumen dibandingkan dengan seluruh dokumen yang tersedia. Dalam konteks ini, dokumen merujuk pada nama penulis buku.
 
-![image](https://github.com/user-attachments/assets/9188c44b-4e6e-43d7-8bb3-15117e5f05c1)
+Setelah kata-kata dalam nama penulis diubah ke dalam bentuk numerik, langkah selanjutnya adalah menghitung tingkat kesamaan antar buku menggunakan cosine similarity. Cosine similarity digunakan untuk mengukur sejauh mana dua buku memiliki kesamaan berdasarkan kata-kata yang digunakan dalam nama penulis.
 
-- Selanjutnya, lakukan proses fit dan transformasi pada daftar book_author menggunakan TfidfVectorizer(), yang akan mengubahnya menjadi matriks. Sehingga tercipta output seperti dibawah ini. 
+Dari hasil perhitungan tersebut, rekomendasi buku dibuat dengan mengambil buku yang memiliki nilai kesamaan paling tinggi dengan buku yang sudah dibaca pengguna.
 
-![image](https://github.com/user-attachments/assets/a65c0e33-ab99-4b41-b150-d08ca3445219)
+Hasil rekomendasi contoh untuk buku "The Star Rover":
 
-Selanjutnya, hitung derajat kesamaan antar buku menggunakan teknik cosine similarity. Dengan menggunakan fungsi `cosine_similarity` dari library sklearn, kita dapat menghitung seberapa mirip setiap buku berdasarkan representasi numeriknya, yang menghasilkan output berupa matriks kesamaan antar buku.
+The Sea Wolf - Jack London
 
+The Call of the Wild: Complete and Unabridged - Jack London
+
+The Call of the Wild: And Selected Stories - Jack London
+
+White Fang - Jack London
+
+Kelebihan:
+
+Cepat dalam menghasilkan rekomendasi yang sesuai dengan preferensi spesifik pengguna.
+
+Mudah diterapkan dan dipahami.
+
+Kekurangan:
+
+Terbatas hanya mempertimbangkan aspek tertentu seperti penulis, tanpa melibatkan aspek popularitas atau preferensi umum lainnya.
 
 ### Evaluation Content Based Filtering
 
@@ -194,15 +231,30 @@ Hasil rekomendasinya yang diberikan oleh sistem berdasarkan buku di atas yaitu.
 
 ollaborative Filtering, di sisi lain, memiliki kelebihan dalam hal kemampuan untuk memanfaatkan data dari banyak pengguna untuk memberikan rekomendasi. Dengan mengandalkan pola interaksi antara pengguna dan buku, model ini dapat merekomendasikan buku yang mungkin tidak terduga oleh pengguna, berdasarkan preferensi pengguna lain yang memiliki kesamaan. Hal ini membuat Collaborative Filtering sangat efektif untuk menemukan buku yang relevan yang mungkin tidak dikenal oleh pengguna sebelumnya, memperkenalkan variasi dalam rekomendasi. Selain itu, model ini semakin kuat seiring dengan pertambahan jumlah pengguna dan data interaksi, karena semakin banyak data yang tersedia, semakin akurat sistem dalam memberikan rekomendasi. Salah satu keunggulan Collaborative Filtering adalah kemampuannya untuk memberikan rekomendasi yang lebih luas, yang tidak terikat pada atribut spesifik buku, melainkan lebih pada preferensi kolektif dari komunitas pengguna. Namun, kelemahan dari model ini adalah adanya masalah "cold start", yaitu ketika ada buku baru atau pengguna baru yang belum memiliki cukup interaksi untuk membuat rekomendasi yang relevan.
 
-- Langkah pertama adalah mengetahui berapa banyak pengguna (user) dan buku (book) yang ada dalam dataset. Ini penting untuk membuat embedding layer nantinya.
+Berikut adalah penjelasan tentang **Collaborative Filtering** dengan bahasa yang lebih sederhana dan mudah dipahami:
 
-![image](https://github.com/user-attachments/assets/dcf192be-7356-4ed2-981b-6a0e195845f4)
+### Collaborative Filtering
 
-- pembagian data untuk model rekomendasi buku. Data pengguna dan buku diproses, kemudian rating dinormalisasi ke rentang 0 hingga 1. Selanjutnya, 70% data digunakan untuk melatih model, sisanya untuk pengujian.
+**Cara Kerjanya:**
 
-![image](https://github.com/user-attachments/assets/af466223-b830-484c-9b1a-88dc7d3e2637)
+1. **Persiapan Data:**
 
-- Selama training, model belajar memprediksi rating dari data user dan buku yang telah di-embed. Setiap epoch akan menghasilkan nilai loss dan RMSE yang digunakan untuk evaluasi.
+   * **Mengubah ID Pengguna dan Buku ke Angka**: Sebelum sistem bisa bekerja, kita perlu mengubah informasi pengguna dan buku menjadi angka. Misalnya, setiap pengguna akan diberi angka 0, 1, 2, dan seterusnya. Begitu juga dengan setiap buku yang diberi angka unik.
+2. **Membangun Model Rekomendasi:**
+
+   * Setelah data diubah menjadi angka, kita menggunakan sistem cerdas (seperti otak buatan) untuk mempelajari pola dari kebiasaan pengguna. Sistem ini akan mempelajari buku mana yang sering dibaca oleh pengguna dengan kesukaan yang sama.
+3. **Proses Pelatihan:**
+
+   * Model ini dilatih untuk memprediksi buku apa yang mungkin disukai oleh pengguna berdasarkan pola yang ditemukan dari data pengguna dan buku yang sudah mereka beri rating.
+
+**Kelebihan:**
+
+* Sistem ini bisa memberikan rekomendasi buku yang lebih sesuai dengan minat setiap pengguna, berdasarkan apa yang disukai pengguna lain dengan kesukaan yang mirip.
+* Bisa menangani banyak data dan memberikan hasil yang baik.
+
+**Kekurangan:**
+
+* Untuk mendapatkan rekomendasi yang akurat, sistem ini membutuhkan banyak data agar bisa bekerja dengan baik. *
 
 ### Evaluation Collaborative Filtering
 
