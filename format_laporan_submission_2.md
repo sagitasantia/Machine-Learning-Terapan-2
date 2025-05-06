@@ -2,37 +2,39 @@
 
 ## Project Overview
 
-   Seiring berkembangnya kebutuhan pengguna dalam memilih bahan bacaan yang sesuai, sistem rekomendasi menjadi salah satu solusi penting untuk membantu menemukan buku yang relevan dengan preferensi masing-masing individu. Banyaknya pilihan yang tersedia dapat menimbulkan kebingungan, sehingga diperlukan sistem cerdas yang dapat memberikan saran buku secara otomatis.
-   
-   Proyek ini bertujuan untuk membangun sistem rekomendasi buku dengan pendekatan machine learning menggunakan dua metode utama, yaitu content-based filtering dan collaborative filtering. Content-based filtering memberikan rekomendasi berdasarkan kemiripan konten buku, seperti nama penulis atau genre, sedangkan collaborative filtering memberikan rekomendasi berdasarkan pola perilaku pengguna lain yang memiliki preferensi serupa.
-    
-   Penelitian oleh Hendrayana dan Wibowo (2024) menunjukkan bahwa metode content-based filtering efektif dalam memberikan hasil rekomendasi buku berdasarkan kesamaan kata kunci dan kategori buku. Mereka berhasil memperoleh nilai kemiripan tertinggi sebesar 0,775 untuk buku "Panduan Lengkap Agama Islam Secara Kafah" berdasarkan kata kunci "Panduan Agama Islam". Pendekatan serupa juga telah diterapkan oleh BISA AI Academy dalam proyek sistem rekomendasi buku dengan memanfaatkan algoritma content-based dan collaborative filtering, yang terbukti mampu memberikan rekomendasi yang tepat sasaran bagi pengguna.
+  Seiring berkembangnya kebutuhan pengguna dalam memilih bahan bacaan yang sesuai, sistem rekomendasi menjadi salah satu solusi penting untuk membantu menemukan buku yang relevan dengan preferensi masing-masing individu. Banyaknya pilihan yang tersedia dapat menimbulkan kebingungan, sehingga diperlukan sistem cerdas yang dapat memberikan saran buku secara otomatis.
+
+Proyek ini bertujuan untuk membangun sistem rekomendasi buku dengan pendekatan machine learning menggunakan dua metode utama, yaitu content-based filtering dan collaborative filtering. Content-based filtering memberikan rekomendasi berdasarkan kemiripan konten buku, seperti nama penulis atau genre, sedangkan collaborative filtering memberikan rekomendasi berdasarkan pola perilaku pengguna lain yang memiliki preferensi serupa.
+
+Penelitian oleh Hendrayana dan Wibowo (2024) menunjukkan bahwa metode content-based filtering efektif dalam memberikan hasil rekomendasi buku berdasarkan kesamaan kata kunci dan kategori buku. Mereka berhasil memperoleh nilai kemiripan tertinggi sebesar 0,775 untuk buku "Panduan Lengkap Agama Islam Secara Kafah" berdasarkan kata kunci "Panduan Agama Islam". Pendekatan serupa juga telah diterapkan oleh BISA AI Academy dalam proyek sistem rekomendasi buku dengan memanfaatkan algoritma content-based dan collaborative filtering, yang terbukti mampu memberikan rekomendasi yang tepat sasaran bagi pengguna.
 
 ## Business Understanding
 
    Setiap pembaca tentu memiliki preferensi dan minat yang berbeda dalam memilih buku. Ada yang menyukai karya dari penulis tertentu, ada pula yang lebih tertarik pada genre atau bahkan sampul buku. Perbedaan preferensi ini menjadi alasan kuat untuk menghadirkan sistem rekomendasi buku yang mampu menyesuaikan saran dengan kebiasaan dan minat pembaca. Dengan bantuan sistem rekomendasi, pengguna dapat lebih mudah menemukan bacaan yang relevan dan sesuai dengan selera mereka.
 
+Namun, terdapat tantangan dalam menghubungkan preferensi pengguna dengan rekomendasi buku yang tepat. Oleh karena itu, problem statement dan goal proyek ini dirumuskan sebagai berikut:
+
 ### Problem Statements
 
-- Bagaimana merancang sistem yang dapat merekomendasikan buku berdasarkan kesamaan penulis?
-- Bagaimana menyusun rekomendasi buku dengan mempertimbangkan penilaian tertinggi dari pengguna lain?
+- Bagaimana merancang sistem yang efektif dalam memberikan rekomendasi buku yang relevan dengan preferensi pengguna berdasarkan penulis buku yang mereka sukai?
+- Bagaimana memastikan rekomendasi buku juga mempertimbangkan popularitas atau penilaian tertinggi dari pengguna lain untuk meningkatkan kepuasan pengguna?
 
 ### Goals
 
-- Mengidentifikasi metode untuk memberikan rekomendasi buku berdasarkan informasi penulis.
-- Mengetahui cara kerja sistem rekomendasi berdasarkan data rating yang diberikan oleh pengguna.
+- Mengidentifikasi metode yang tepat untuk merekomendasikan buku berdasarkan informasi penulis yang relevan dengan preferensi pengguna.
+- Memahami mekanisme dan efektivitas rekomendasi buku berdasarkan data rating dari pengguna lain, guna meningkatkan akurasi rekomendasi.
 
 **Solution Approach**:
 
 Proyek ini mengambil dua pendekatan dalam sistem rekomendasi berbasis machine learning, yaitu:
 
 ### Content-Based Filtering
-Metode ini memberikan saran berdasarkan karakteristik item (buku) yang sebelumnya disukai oleh pengguna. Sistem mempelajari preferensi pengguna melalui fitur-fitur seperti nama penulis, lalu merekomendasikan buku lain yang memiliki kemiripan.
+- Metode ini memberikan saran berdasarkan karakteristik item (buku) yang sebelumnya disukai oleh pengguna. Sistem mempelajari preferensi pengguna melalui fitur-fitur seperti nama penulis, lalu merekomendasikan buku lain yang memiliki kemiripan.
 - Model preferensi pengguna yang terbentuk dari histori interaksi.
 - Informasi deskriptif dari item (buku), seperti penulis.
 
 ### Collaborative Filtering
-Berbeda dengan content-based, metode ini memanfaatkan data dari pengguna lain untuk memberikan rekomendasi. Sistem mencari pola kesamaan antar pengguna dalam memberikan rating terhadap buku, dan menyarankan buku yang disukai oleh pengguna dengan preferensi serupa. Terdapat dua pendekatan umum dalam collaborative filtering:
+- Berbeda dengan content-based, metode ini memanfaatkan data dari pengguna lain untuk memberikan rekomendasi. Sistem mencari pola kesamaan antar pengguna dalam memberikan rating terhadap buku, dan menyarankan buku yang disukai oleh pengguna dengan preferensi serupa. Terdapat dua pendekatan umum dalam collaborative filtering:
 - Memory-based: menggunakan seluruh data interaksi pengguna secara langsung.
 - Model-based: menggunakan algoritma machine learning untuk mempelajari pola hubungan antar pengguna dan item.
 
