@@ -195,18 +195,6 @@ Cara kerja dari pendekatan ini adalah dengan memanfaatkan metode TF-IDF (Term Fr
 
 Setelah kata-kata dalam nama penulis diubah ke dalam bentuk numerik, langkah selanjutnya adalah menghitung tingkat kesamaan antar buku menggunakan cosine similarity. Cosine similarity digunakan untuk mengukur sejauh mana dua buku memiliki kesamaan berdasarkan kata-kata yang digunakan dalam nama penulis.
 
-Dari hasil perhitungan tersebut, rekomendasi buku dibuat dengan mengambil buku yang memiliki nilai kesamaan paling tinggi dengan buku yang sudah dibaca pengguna.
-
-Hasil rekomendasi contoh untuk buku "The Star Rover":
-
-The Sea Wolf - Jack London
-
-The Call of the Wild: Complete and Unabridged - Jack London
-
-The Call of the Wild: And Selected Stories - Jack London
-
-White Fang - Jack London
-
 Kelebihan:
 
 Cepat dalam menghasilkan rekomendasi yang sesuai dengan preferensi spesifik pengguna.
