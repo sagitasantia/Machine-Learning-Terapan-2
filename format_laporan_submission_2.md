@@ -231,8 +231,6 @@ Hasil rekomendasinya yang diberikan oleh sistem berdasarkan buku di atas yaitu.
 
 ollaborative Filtering, di sisi lain, memiliki kelebihan dalam hal kemampuan untuk memanfaatkan data dari banyak pengguna untuk memberikan rekomendasi. Dengan mengandalkan pola interaksi antara pengguna dan buku, model ini dapat merekomendasikan buku yang mungkin tidak terduga oleh pengguna, berdasarkan preferensi pengguna lain yang memiliki kesamaan. Hal ini membuat Collaborative Filtering sangat efektif untuk menemukan buku yang relevan yang mungkin tidak dikenal oleh pengguna sebelumnya, memperkenalkan variasi dalam rekomendasi. Selain itu, model ini semakin kuat seiring dengan pertambahan jumlah pengguna dan data interaksi, karena semakin banyak data yang tersedia, semakin akurat sistem dalam memberikan rekomendasi. Salah satu keunggulan Collaborative Filtering adalah kemampuannya untuk memberikan rekomendasi yang lebih luas, yang tidak terikat pada atribut spesifik buku, melainkan lebih pada preferensi kolektif dari komunitas pengguna. Namun, kelemahan dari model ini adalah adanya masalah "cold start", yaitu ketika ada buku baru atau pengguna baru yang belum memiliki cukup interaksi untuk membuat rekomendasi yang relevan.
 
-Berikut adalah penjelasan tentang **Collaborative Filtering** dengan bahasa yang lebih sederhana dan mudah dipahami:
-
 ### Collaborative Filtering
 
 **Cara Kerjanya:**
