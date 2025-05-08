@@ -202,6 +202,9 @@ Cara kerja dari pendekatan ini adalah dengan memanfaatkan metode TF-IDF (Term Fr
 
 Setelah kata-kata dalam nama penulis diubah ke dalam bentuk numerik, langkah selanjutnya adalah menghitung tingkat kesamaan antar buku menggunakan cosine similarity. Cosine similarity digunakan untuk mengukur sejauh mana dua buku memiliki kesamaan berdasarkan kata-kata yang digunakan dalam nama penulis.
 
+Kemudian, sistem menggunakan fungsi author_recommendations() untuk mengambil beberapa buku yang paling mirip dengan buku yang dipilih pengguna. Misalnya, jika pengguna membaca "The Star Rover", maka sistem akan mencari dan menampilkan beberapa buku lain yang memiliki konten paling mirip dengan buku tersebut.
+
+
 Kelebihan:
 
 Cepat dalam menghasilkan rekomendasi yang sesuai dengan preferensi spesifik pengguna.
@@ -212,16 +215,6 @@ Kekurangan:
 
 Terbatas hanya mempertimbangkan aspek tertentu seperti penulis, tanpa melibatkan aspek popularitas atau preferensi umum lainnya.
 
-### Evaluation Content Based Filtering
-
-Evaluasi model dilakukan dengan mengukur akurasi hasil rekomendasi berdasarkan buku yang telah dibaca oleh pengguna. Akurasi diukur berdasarkan seberapa sering buku yang direkomendasikan memiliki penulis yang sama dengan buku yang telah dibaca oleh pengguna sebelumnya. Model ini menggunakan teknik pengukuran precision untuk menentukan akurasi rekomendasi. 
-
-![image](https://github.com/user-attachments/assets/9f7607dd-ad45-4404-8c94-b817b166cb33)
-
-- Hasil rekomendasinya yang diberikan oleh sistem berdasarkan buku di atas yaitu.
-
-![image](https://github.com/user-attachments/assets/b8b0016d-1833-4395-9792-e1ce5b457a47)
-
 ### Collaborative Filtering
 
 Collaborative Filtering, di sisi lain, memiliki kelebihan dalam hal kemampuan untuk memanfaatkan data dari banyak pengguna untuk memberikan rekomendasi. Dengan mengandalkan pola interaksi antara pengguna dan buku, model ini dapat merekomendasikan buku yang mungkin tidak terduga oleh pengguna, berdasarkan preferensi pengguna lain yang memiliki kesamaan. Hal ini membuat Collaborative Filtering sangat efektif untuk menemukan buku yang relevan yang mungkin tidak dikenal oleh pengguna sebelumnya, memperkenalkan variasi dalam rekomendasi. Selain itu, model ini semakin kuat seiring dengan pertambahan jumlah pengguna dan data interaksi, karena semakin banyak data yang tersedia, semakin akurat sistem dalam memberikan rekomendasi. Salah satu keunggulan Collaborative Filtering adalah kemampuannya untuk memberikan rekomendasi yang lebih luas, yang tidak terikat pada atribut spesifik buku, melainkan lebih pada preferensi kolektif dari komunitas pengguna. Namun, kelemahan dari model ini adalah adanya masalah "cold start", yaitu ketika ada buku baru atau pengguna baru yang belum memiliki cukup interaksi untuk membuat rekomendasi yang relevan.
@@ -230,15 +223,14 @@ Collaborative Filtering, di sisi lain, memiliki kelebihan dalam hal kemampuan un
 
 **Cara Kerjanya:**
 
-1. **Persiapan Data:**
+Model yang digunakan menggunakan metode Collaborative Filtering, yaitu pendekatan yang memberikan rekomendasi berdasarkan kesamaan preferensi antar pengguna. Teknik ini tidak memerlukan informasi tentang isi buku (seperti genre atau deskripsi), melainkan hanya mengandalkan data interaksi pengguna terhadap item — dalam hal ini berupa user_id, ISBN, dan rating.
 
-   * **Mengubah ID Pengguna dan Buku ke Angka**: Sebelum sistem bisa bekerja, kita perlu mengubah informasi pengguna dan buku menjadi angka. Misalnya, setiap pengguna akan diberi angka 0, 1, 2, dan seterusnya. Begitu juga dengan setiap buku yang diberi angka unik.
-2. **Membangun Model Rekomendasi:**
+Model dikembangkan dengan menggunakan TensorFlow Keras, yang terdiri dari embedding layer untuk pengguna dan buku, serta bias untuk masing-masing. Embedding ini membantu model memahami representasi fitur dari pengguna dan buku dalam bentuk vektor berdimensi lebih kecil. Hasil dot product dari embedding ini ditambahkan dengan bias, lalu diproses dengan fungsi aktivasi sigmoid untuk menghasilkan prediksi skor rating.
 
-   * Setelah data diubah menjadi angka, kita menggunakan sistem cerdas (seperti otak buatan) untuk mempelajari pola dari kebiasaan pengguna. Sistem ini akan mempelajari buku mana yang sering dibaca oleh pengguna dengan kesukaan yang sama.
-3. **Proses Pelatihan:**
+Setelah model dilatih menggunakan optimizer Adam dan loss function Binary Crossentropy, proses rekomendasi dapat dilakukan. Caranya, sistem akan memilih satu pengguna secara acak, lalu mengidentifikasi buku yang sudah dan belum dibaca. Buku yang belum dibaca dikonversi ke bentuk numerik dan dipasangkan dengan ID pengguna tersebut.
 
-   * Model ini dilatih untuk memprediksi buku apa yang mungkin disukai oleh pengguna berdasarkan pola yang ditemukan dari data pengguna dan buku yang sudah mereka beri rating.
+Model kemudian memprediksi skor kemungkinan suka terhadap setiap buku yang belum dibaca oleh pengguna. Skor-skor ini diurutkan dan 10 buku teratas dengan skor tertinggi dipilih sebagai rekomendasi. Untuk menunjukkan selera pengguna, sistem juga mencetak 5 buku dengan rating tertinggi yang pernah dibaca oleh pengguna tersebut.
+
 
 **Kelebihan:**
 
@@ -248,17 +240,6 @@ Collaborative Filtering, di sisi lain, memiliki kelebihan dalam hal kemampuan un
 **Kekurangan:**
 
 * Untuk mendapatkan rekomendasi yang akurat, sistem ini membutuhkan banyak data agar bisa bekerja dengan baik. 
-
-### Evaluation Collaborative Filtering
-
-![download](https://github.com/user-attachments/assets/3fa17a65-276d-4d5d-8b99-51d832a24a2b)
-
-- model mengalami penurunan yang stabil dalam loss dan RMSE baik pada data pelatihan maupun data validasi, meskipun ada sedikit fluktuasi pada epoch tertentu. Model terus memperbaiki dirinya selama 20 epoch, tetapi ada sedikit tanda bahwa penurunan error mulai melambat setelah beberapa epoch terakhir, yang mungkin menunjukkan bahwa model sudah mulai mencapai titik optimumnya.
-
-- hasil rekomendasinya sebagai berikut.
-  
-![image](https://github.com/user-attachments/assets/08751636-fe51-4174-bb1a-c88b0a01943f)
-
 
 ### Evaluation
 
@@ -278,6 +259,16 @@ Akurasi dihitung dengan melihat persentase rekomendasi yang sesuai dengan prefer
 
 Hasil 80% akurasi menunjukkan bahwa sistem dapat memberikan rekomendasi yang cukup tepat sesuai dengan penulis buku yang disukai oleh pengguna, namun masih ada ruang untuk perbaikan agar dapat lebih relevan lagi.
 
+### Evaluation Content Based Filtering
+
+Evaluasi model dilakukan dengan mengukur akurasi hasil rekomendasi berdasarkan buku yang telah dibaca oleh pengguna. Akurasi diukur berdasarkan seberapa sering buku yang direkomendasikan memiliki penulis yang sama dengan buku yang telah dibaca oleh pengguna sebelumnya. Model ini menggunakan teknik pengukuran precision untuk menentukan akurasi rekomendasi. 
+
+![image](https://github.com/user-attachments/assets/9f7607dd-ad45-4404-8c94-b817b166cb33)
+
+- Hasil rekomendasinya yang diberikan oleh sistem berdasarkan buku di atas yaitu.
+
+![image](https://github.com/user-attachments/assets/b8b0016d-1833-4395-9792-e1ce5b457a47)
+
 Root Mean Squared Error (RMSE) untuk Collaborative Filtering:
 
 Mengapa memilih RMSE?
@@ -291,6 +282,18 @@ RMSE memberikan gambaran yang jelas mengenai seberapa baik model dalam mempredik
 RMSE dihitung dengan menghitung selisih antara rating yang diprediksi oleh model dengan rating yang sebenarnya. Semakin kecil nilai RMSE, semakin akurat prediksi rating yang diberikan oleh model.
 
 Pada hasil pelatihan, RMSE menurun dari 0.4298 pada epoch pertama menjadi 0.3475 pada epoch terakhir, yang menunjukkan bahwa model Collaborative Filtering semakin baik dalam memprediksi rating yang akan diberikan oleh pengguna seiring berjalannya waktu.
+
+### Evaluation Collaborative Filtering
+
+![download](https://github.com/user-attachments/assets/3fa17a65-276d-4d5d-8b99-51d832a24a2b)
+
+- model mengalami penurunan yang stabil dalam loss dan RMSE baik pada data pelatihan maupun data validasi, meskipun ada sedikit fluktuasi pada epoch tertentu. Model terus memperbaiki dirinya selama 20 epoch, tetapi ada sedikit tanda bahwa penurunan error mulai melambat setelah beberapa epoch terakhir, yang mungkin menunjukkan bahwa model sudah mulai mencapai titik optimumnya.
+
+- hasil rekomendasinya sebagai berikut.
+  
+![image](https://github.com/user-attachments/assets/899be2b1-e9b5-4e78-ab44-51aec7b14a92)
+
+Itu merupakan hasil dari proses rekomendasi buku untuk pengguna dengan user_id 276747 berdasarkan model Collaborative Filtering yang telah dibangun sebelumnya.
 
 Relevansi Metrik dengan Proyek
 Akurasi sangat relevan untuk Content-Based Filtering karena tujuan utama model ini adalah memberikan rekomendasi yang tepat berdasarkan preferensi pengguna terhadap penulis atau genre. Metrik ini akan menunjukkan seberapa baik sistem dalam mencocokkan rekomendasi dengan minat pengguna yang sudah ada.
