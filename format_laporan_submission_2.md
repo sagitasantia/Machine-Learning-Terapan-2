@@ -285,7 +285,7 @@ Pada hasil pelatihan, RMSE menurun dari 0.4298 pada epoch pertama menjadi 0.3475
 
 ### Evaluation Collaborative Filtering
 
-![download](https://github.com/user-attachments/assets/3fa17a65-276d-4d5d-8b99-51d832a24a2b)
+![download](https://github.com/user-attachments/assets/f1f851c0-28c7-4b92-a39f-b70c8e5cc15b)
 
 - model mengalami penurunan yang stabil dalam loss dan RMSE baik pada data pelatihan maupun data validasi, meskipun ada sedikit fluktuasi pada epoch tertentu. Model terus memperbaiki dirinya selama 20 epoch, tetapi ada sedikit tanda bahwa penurunan error mulai melambat setelah beberapa epoch terakhir, yang mungkin menunjukkan bahwa model sudah mulai mencapai titik optimumnya.
 
